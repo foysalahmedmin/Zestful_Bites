@@ -62,7 +62,7 @@ const Header = () => {
                         <li className='font-semibold hover:text-primary border-y-2 border-transparent shrink-0'><ActiveLink to={"/"}>HOME</ActiveLink></li>
                         <li className='font-semibold hover:text-primary border-y-2 border-transparent shrink-0'><ActiveLink to={"/contact"}>CONTACT US</ActiveLink></li>
                         <li className='font-semibold hover:text-primary border-y-2 border-transparent shrink-0'><ActiveLink to={"/menu"}>OUR MENU</ActiveLink></li>
-                        <li className='font-semibold hover:text-primary border-y-2 border-transparent shrink-0'><ActiveLink to={"/shop"}>OUR SHOP</ActiveLink></li>
+                        <li className='font-semibold hover:text-primary border-y-2 border-transparent shrink-0'><ActiveLink to={"/shop/all"}>OUR SHOP</ActiveLink></li>
                     </ul>
                     <div className='flex justify-end items-center gap-5 '>
                         <button className="btn btn-ghost relative">

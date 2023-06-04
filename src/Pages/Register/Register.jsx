@@ -14,6 +14,7 @@ const Register = () => {
         createAccount(data?.email, data?.password)
         .then(result => {
             const createdUser = result.user
+            reset()
             navigate('/', { replace: true })
             userProfileUpdate(createdUser, data.name, data.photoUrl)
         })
