@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { HiMenuAlt1, HiOutlineUserCircle, HiX } from "react-icons/hi";
-import ActiveLink from "../../../providers/ActiveLink";
 import { Link } from "react-router-dom";
 import logo from '../../../assets/others/zestful-bites-logo.svg'
 import cartImg from '../../../assets/others/cartImg.png'
+import ActiveLink from "../../../providers/ActiveLink";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 
 const Header = () => {
-    // const { user, logOut } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     const [menuActive, setMenuActive] = useState(false)
     const [scrolled, setScrolled] = useState(false)
     useEffect(() => {
@@ -70,9 +71,8 @@ const Header = () => {
                                 <span className="indicator-item badge badge-secondary absolute top-0 right-0 shadow-xl">0</span>
                             </Link>
                         </button>
-                        <Link to='/login'><button className='btn btn-ghost text-white'>Log-In</button></Link>
 
-                        {/* {
+                        {
                             user ?
                                 user.photoURL ?
                                     <img src={user?.photoURL} title={user.displayName} className='w-11 h-11 rounded-full' alt="" />
@@ -81,9 +81,9 @@ const Header = () => {
                         }
                         {
                             user ?
-                                <button onClick={logOut} className='btn btn-primary text-white'>Log-Out</button>
-                                : <Link to='/login'><button className='btn btn-primary text-white'>Log-In</button></Link>
-                        } */}
+                                <button onClick={logOut} className='btn btn-ghost text-white'>Log-Out</button>
+                                : <Link to='/loginRegister/login'><button className='btn btn-ghost text-white'>Log-In</button></Link>
+                        }
                     </div>
                 </nav>
             </div>

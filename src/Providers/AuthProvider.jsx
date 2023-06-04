@@ -10,10 +10,10 @@ const gitHubProvider = new GithubAuthProvider()
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const register = (email, password) => {
+    const createAccount = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
-    }
+    } 
     const updateProfile_name_url = (user, name, photo) => {
         updateProfile(user, {
             displayName: name, photoURL: photo,
@@ -48,7 +48,7 @@ const AuthProvider = ({ children }) => {
     const authInfo = {
         user,
         loading,
-        register,
+        createAccount,
         updateProfile_name_url,
         logIn_with_google,
         logIn_with_gitHub,
